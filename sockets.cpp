@@ -1,11 +1,5 @@
 #include "sockets.h"
 #include "io.h"
-#include <asm-generic/socket.h>
-#include <cerrno>
-#include <cstring>
-#include <sys/socket.h>
-#include <fcntl.h>
-#include <sys/types.h>
 
 Socket::Socket(int socketmode, int socket_type, int port, const char* address){
     //Remember if the socket is a client or server.

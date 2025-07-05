@@ -1,10 +1,9 @@
 #include "sockets.h"
-#include "io.h"
-#include <set>
 #include <unordered_map>
 #include <algorithm>
-#include <memory>
 #include <vector>
+#include <ncurses.h>
+#include <sys/select.h>
 
 struct fdSetGroup{
     //FD_SET containing all the active sockets.

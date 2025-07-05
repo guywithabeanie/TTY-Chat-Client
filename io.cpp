@@ -1,5 +1,4 @@
 #include "io.h"
-#include <ncurses.h>
 
 //Width and height of the terminal.
 int g_terminalWidth = 0, g_terminalHeight = 0;

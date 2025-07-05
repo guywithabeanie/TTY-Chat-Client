@@ -1,7 +1,6 @@
 //Handles printing and user input.
 #pragma once
 #include <string>
-#include <unistd.h>
 #include <ncurses.h>
 #include <vector>
 

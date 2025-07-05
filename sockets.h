@@ -5,11 +5,9 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <unistd.h>
-#include <fcntl.h>
-#include <cstring>
 #include <cerrno>
+#include <cstring>
 #include <iostream>
-#include <map>
 
 //Macros.
 

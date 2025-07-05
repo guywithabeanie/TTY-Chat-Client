@@ -1,11 +1,6 @@
 #include "networking.h"
 #include "io.h"
 #include "sockets.h"
-#include <cstring>
-#include <ncurses.h>
-#include <ostream>
-#include <sys/select.h>
-#include <vector>
 
 //Globals, defined in networking.h
 Socket g_serverSocket, g_clientSocket;
