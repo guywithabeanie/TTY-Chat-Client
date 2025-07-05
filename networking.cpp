@@ -56,22 +56,10 @@ int InitializeNetwork(int argc, char* argv[]){
         }
         //We're joining!
         else if( !strcmp( argv[i], "--join") ){
-            //Argument next to --join must be structured like "address:port"
-            std::string socketAddress(argv[i+1]);
-            //Gets index before where we first find a colon.
-            size_t colonPos = socketAddress.find(":");
-            //Couldn't find a colon </3
-            if( colonPos == std::string::npos ){
-                End_Screen();
-                std::cerr << "Error! --join must be followed by address and port structured in the format address:port!" << std::endl;
-                exit(1);
-            }
-            //Extract address.
-            std::string address = socketAddress.substr(0, colonPos);
-            //Extract port number.
-            int port = std::stoi(socketAddress.substr(colonPos+1));
-            //Creates socket with this new-found information.
-            g_clientSocket = Socket( CLIENT, SOCK_STREAM, port, address.c_str());
+            //Extract the address.
+            std::string address(argv[i+1]);
+            //Creates socket with the address and port "6969" (nice).
+            g_clientSocket = Socket( CLIENT, SOCK_STREAM, 6969, address.c_str());
             //Skips next command-line argument because we have already processed it.
             i++;
         }
