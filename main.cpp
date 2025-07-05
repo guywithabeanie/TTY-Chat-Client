@@ -2,7 +2,6 @@
 #include "sockets.h"
 #include "networking.h"
 #include <csignal>
-#include <fcntl.h>
 
 #define COLOR_GRAY 8
 
