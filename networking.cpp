@@ -28,6 +28,13 @@ int InitializeNetwork(int argc, char* argv[]){
     FD_ZERO( &s_clientfdSets.readfds );
     FD_ZERO( &s_clientfdSets.writefds );
 
+    //There are no command-line arguments or there is only the --name command line argument.
+    if( argc == 1 || argc == 2 && !strcmp(argv[1], "--name")){
+        End_Screen();
+        printf("You need to specify command line arguments like --host or --join.\n");
+        exit(0);
+    }
+
     //Goes through all command-line arguments.
     for( int i = 1; i < argc; i++ ){
         //We're hosting!
