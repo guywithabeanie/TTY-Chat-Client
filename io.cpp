@@ -195,6 +195,9 @@ std::string Handle_Messages(){
         std::string temp = s_messageBoxString;
         //Clear the original message box string.
         s_messageBoxString.clear();
+        //Reset MaxX.
+        for( auto i : s_maxX ) i = -1;
+        s_maxX[0] = 0;
         //Return the message box string.
         return temp;
     }
@@ -221,8 +224,8 @@ std::string Handle_Messages(){
         Increase_MaxX(s_messageBox.cursorY, s_messageBox.width, s_messageBox.height);
     }
     //Delete character before cursor position.
-    //Some terminals send '\b' when backspace is pressed.
-    else if( ch == KEY_BACKSPACE || ch == '\b' ){
+    //Some terminals send '\b' when backspace is pressed, and some terminal send '\x7F'.
+    else if( ch == KEY_BACKSPACE || ch == '\b' || ch == '\x7F' ){
         //Only works if there even is any text and we have something to delete.
         if( s_messageBoxString.length() > 0 && (s_messageBox.cursorX > 0 || s_messageBox.cursorY > 0) ){
             //Decrease cursor position.
